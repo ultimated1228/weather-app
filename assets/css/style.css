@@ -11,8 +11,8 @@
     font-size: 30px;
     font-weight: bold;
     color:white;
-    height: 75px;
-    line-height: 75px;
+    height: 60px;
+    line-height: 60px;
 
 }
 
@@ -39,7 +39,7 @@
 .hrLeft{
     background: black;
     width: 200px;
-    height: 3px;
+    height: 2px;
     margin:0;
 }
 
@@ -50,15 +50,35 @@
 .subtitle{
     font-weight: bold;
     margin-bottom: 0px !important;
-    /* how do I align this left? */
+}
+
+.leftNavHeader{
+    font-size:24px;
+/* how do I align this left? */
 }
 
 .is-normal{
     background-color: rgb(229, 222, 222);
 }
 
-li{
-    background-color: red !important;
+.fiveDayCardHeader{
+    font-size:15px;
+    font-weight: bold;
+}
+
+.fiveDayCard{
+    margin-right: .75rem;
+    margin-left: .75rem;
+    background-color:rgb(31, 30, 51);
+    color:white;
+    padding-top: 2px;
+    padding-left:5px;
+    font-size:13px;
+    margin-bottom: 5px;
+}
+
+.card{
+    line-height: 1.75;
 }
 
 .currentWeather{

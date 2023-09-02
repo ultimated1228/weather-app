@@ -12,14 +12,14 @@
     <header>
         <!-- "Weather Dashboard Title Here with a gradient blue to light blue background" -->
         <div id=top>
-            Weather Dashboard
+            <div style = "margin-left:15%;">Weather Dashboard</div>
         </div>
     </header>
     <!-- Stacked column with a title "Search for a city" a search bar below that, an hr, and then the cities searched for populating dynamically below that -->
-    <div class="columns is-mobile">
+    <div class="columns">
         <section class="column level">
             <!-- **!!why won't this left align!!** -->
-            <h2 class="subtitle">Search for a City:</h2>
+            <h2 class="subtitle leftNavHeader">Search for a City:</h2>
             <p class="control">
                 <input class="input" type="text" placeholder="Enter a City">
             </p>
@@ -32,24 +32,58 @@
             <ul class="searchedCities button is-normal is-responsive"> St George
 
             </ul>
-
+            <hr class="hrLeft">
         </section>
         <main class="column">
             <!-- main body where the currently selected cities weather for the current date with display. Below that cards with the weathers 5 day forecast t-->
 
-            
-                <div class="currentWeather card">
-                    test
-                </div>
+
+            <div class="currentWeather card">
+                <div class="subtitle currentWeatherHeader">City + (date) + weather icon</div>
+                <div class="currentWeatherTemp">Temp:</div>
+                <div class="currentWeatherWind">Wind:</div>
+                <div class="currentWeatherHumidity">Humidity:</div>
+            </div>
             <br>
-                <ul class="columns" style = "width:90%">
-                    <li class="column is-one-fifths card">a</li>
-                    <li class="column card">b</li>
-                    <li class="column card">c</li>
-                    <li class="column card">d</li>
-                    <li class="column card">e</li>
-                    <!-- these li elements will need a class of column when dynamically generated -->
-                </ul>
+            <div class="subtitle" style=font-size:20px;>5-day Forecast:</div>
+            <br>
+            <ul class="columns" style="width:90%">
+                <li class="column is-one-fifths card fiveDayCard">
+                    <div class="fiveDayCardHeader">Date</div>
+                    <div style="margin-left: .5rem" class="fiveDayCardIcon">Icon</div>
+                    <div class="fiveDayCardTemp">Temp:</div>
+                    <div class="fiveDayCardWind">Wind:</div>
+                    <div class="fiveDayCardHumidity">Humidity:</div>
+                </li>
+                <li class="column card fiveDayCard">
+                    <div class="fiveDayCardHeader">Date</div>
+                    <div style="margin-left: .5rem" class="fiveDayCardIcon">Icon</div>
+                    <div class="fiveDayCardTemp">Temp:</div>
+                    <div class="fiveDayCardWind">Wind:</div>
+                    <div class="fiveDayCardHumidity">Humidity:</div>
+                </li>
+                <li class="column card fiveDayCard">
+                    <div class="fiveDayCardHeader">Date</div>
+                    <div style="margin-left: .5rem" class="fiveDayCardIcon">Icon</div>
+                    <div class="fiveDayCardTemp">Temp:</div>
+                    <div class="fiveDayCardWind">Wind:</div>
+                    <div class="fiveDayCardHumidity">Humidity:</div>
+                </li>
+                <li class="column card fiveDayCard">
+                    <div class="fiveDayCardHeader">Date</div>
+                    <div style="margin-left: .5rem" class="fiveDayCardIcon">Icon</div>
+                    <div class="fiveDayCardTemp">Temp:</div>
+                    <div class="fiveDayCardWind">Wind:</div>
+                    <div class="fiveDayCardHumidity">Humidity:</div>
+                </li>
+                <li class="column card fiveDayCard">
+                    <div class="fiveDayCardHeader">Date</div>
+                    <div style="margin-left: .5rem" class="fiveDayCardIcon">Icon</div>
+                    <div class="fiveDayCardTemp">Temp:</div>
+                    <div class="fiveDayCardWind">Wind:</div>
+                    <div class="fiveDayCardHumidity">Humidity:</div>
+                </li>
+            </ul>
 
         </main>
     </div>
