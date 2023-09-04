@@ -7,13 +7,13 @@
     <title>Compare Weather</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
     <header>
         <!-- "Weather Dashboard Title Here with a gradient blue to light blue background" -->
         <div id=top>
-            <div style = "margin-left:15%;">Weather Dashboard</div>
+            <div id = title>Weather Dashboard</div>
         </div>
     </header>
     <!-- Stacked column with a title "Search for a city" a search bar below that, an hr, and then the cities searched for populating dynamically below that -->
@@ -35,26 +35,35 @@
             </ul>
             <hr class="hrLeft">
         </section>
-        <main class="column is-four-fifths">
+        <main class="column is-four-fifths" id = showHide>
             <!-- main body where the currently selected cities weather for the current date with display. Below that cards with the weathers 5 day forecast t-->
 
 
             <div class="currentWeather card">
-                <div class="subtitle currentWeatherHeader">City + (date) + weather icon</div>
-                <div class="currentWeatherTemp">Temp:</div>
-                <div class="currentWeatherWind">Wind:</div>
-                <div class="currentWeatherHumidity">Humidity:</div>
+
+                <div class="subtitle currentWeatherHeader"></div>
+                <p class="currentWeatherTemp"></p>
+                <p class="currentWeatherWind"></p>
+                <p class="currentWeatherHumidity"></p>
+
             </div>
             <br>
-            <div class="subtitle" style=font-size:20px;>5-day Forecast:</div>
+            <div class="subtitle" style=font-size:20px;></div>
             <br>
             <ul class="columns" style="width:90%">
                 <li class="column is-one-fifths card fiveDayCard">
-                    <div class="fiveDayCardHeader">Date</div>
-                    <div style="margin-left: .5rem" class="fiveDayCardIcon">Icon</div>
-                    <div class="fiveDayCardTemp">Temp:</div>
-                    <div class="fiveDayCardWind">Wind:</div>
-                    <div class="fiveDayCardHumidity">Humidity:</div>
+                    <div class="fiveDayCardHeader"></div>
+                    <div style="margin-left: .5rem" class="fiveDayCardIcon"></div>
+                    <div class="fiveDayCardTemp"></div>
+                    <div class="fiveDayCardWind"></div>
+                    <div class="fiveDayCardHumidity"></div>
+                </li>
+                <li class="column card fiveDayCard">
+                    <div class="fiveDayCardHeader"></div>
+                    <div style="margin-left: .5rem" class="fiveDayCardIcon"></div>
+                    <div class="fiveDayCardTemp"></div>
+                    <div class="fiveDayCardWind"></div>
+                    <div class="fiveDayCardHumidity"></div>
                 </li>
                 <li class="column card fiveDayCard">
                     <div class="fiveDayCardHeader">Date</div>
@@ -64,30 +73,28 @@
                     <div class="fiveDayCardHumidity">Humidity:</div>
                 </li>
                 <li class="column card fiveDayCard">
-                    <div class="fiveDayCardHeader">Date</div>
-                    <div style="margin-left: .5rem" class="fiveDayCardIcon">Icon</div>
-                    <div class="fiveDayCardTemp">Temp:</div>
-                    <div class="fiveDayCardWind">Wind:</div>
-                    <div class="fiveDayCardHumidity">Humidity:</div>
+                    <div class="fiveDayCardHeader"></div>
+                    <div style="margin-left: .5rem" class="fiveDayCardIcon"></div>
+                    <div class="fiveDayCardTemp"></div>
+                    <div class="fiveDayCardWind"></div>
+                    <div class="fiveDayCardHumidity"></div>
                 </li>
                 <li class="column card fiveDayCard">
-                    <div class="fiveDayCardHeader">Date</div>
-                    <div style="margin-left: .5rem" class="fiveDayCardIcon">Icon</div>
-                    <div class="fiveDayCardTemp">Temp:</div>
-                    <div class="fiveDayCardWind">Wind:</div>
-                    <div class="fiveDayCardHumidity">Humidity:</div>
-                </li>
-                <li class="column card fiveDayCard">
-                    <div class="fiveDayCardHeader">Date</div>
-                    <div style="margin-left: .5rem" class="fiveDayCardIcon">Icon</div>
-                    <div class="fiveDayCardTemp">Temp:</div>
-                    <div class="fiveDayCardWind">Wind:</div>
-                    <div class="fiveDayCardHumidity">Humidity:</div>
+                    <div class="fiveDayCardHeader"></div>
+                    <div style="margin-left: .5rem" class="fiveDayCardIcon"></div>
+                    <div class="fiveDayCardTemp"></div>
+                    <div class="fiveDayCardWind"></div>
+                    <div class="fiveDayCardHumidity"></div>
                 </li>
             </ul>
 
         </main>
     </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"></script>
 
     <script src="./assets/js/script.js"></script>
 </body>

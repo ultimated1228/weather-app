@@ -16,6 +16,10 @@
 
 }
 
+#title {
+    margin-left: 15%;
+} 
+
 .level{
     display:flex;
     flex-direction: column;
@@ -41,18 +45,18 @@
 .searchedCityButtons{
     font-size: 20px !important;
     background-color: rgb(215, 210, 210);
+    width: 95%;
     
 }
 
 .searchedCities{
-    width:100%;
+    width: 100%;
     align-content: center;
     justify-content: center;
     
 }
 
 .button{
-    width: 95%;
     margin: 5px;
 }
 .is-info{
@@ -67,18 +71,24 @@
     margin:0;
 }
 
+#showHide {
+    visibility: hidden;
+}
+
 .buttons{
     margin-bottom: 0px !important;
 }
 
 .subtitle{
     font-weight: bold;
+    font-size: 35px;
     margin-bottom: 0px !important;
 }
 
 .leftNavHeader{
     font-size:24px;
-    text-align: left !important;
+    align-self: flex-start;
+    margin-left: 5px;
 /* how do I align this left? */
 }
 
@@ -103,7 +113,7 @@
 }
 
 .card{
-    line-height: 1.75;
+    line-height: 2.5;
 }
 
 .currentWeather{
@@ -112,3 +122,17 @@
     border: 1px solid black;
     padding:5px;
 } 
+
+@media screen and (max-width: 768px){
+#title {
+    margin-left: 0px;
+    
+}
+
+.leftNavHeader{  
+    align-self: center;
+}
+
+
+
+}
