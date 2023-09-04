@@ -8,7 +8,7 @@ $(document).ready(function () {
         searchedCitiesList.empty();
 
         searchedCities.forEach(city => {
-            const cityItem = $("<li> ");
+            const cityItem = $("<li>");
             cityItem.addClass("button searchedCityButtons is-responsive");
             cityItem.text(city);
             searchedCitiesList.append(cityItem);
@@ -16,6 +16,12 @@ $(document).ready(function () {
     }
 
     displaySearchedCities();
+
+    //   redisplay city info on .searchedCities click
+    $(".searchedCities").on("click", ".searchedCityButtons", function () {
+        let cityName = $(this).text();
+        performSearch(cityName);
+    });
 
 
     $(".is-info").on("click", function () {
@@ -117,9 +123,15 @@ $(document).ready(function () {
 
 
 
-                    // Save the searched city to local storage
-                    searchedCities.push(cityName);
-                    localStorage.setItem("searchedCities", JSON.stringify(searchedCities));
+                    // // Save the searched city to local storage
+                    // searchedCities.push(cityName);
+                    // localStorage.setItem("searchedCities", JSON.stringify(searchedCities));
+
+                    if (!searchedCities.includes(cityName)) {
+                        // Save the searched city to local storage
+                        searchedCities.push(cityName);
+                        localStorage.setItem("searchedCities", JSON.stringify(searchedCities));
+                      }
 
                     // Display the updated list of searched cities
                     displaySearchedCities();

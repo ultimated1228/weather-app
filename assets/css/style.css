@@ -50,8 +50,10 @@
 }
 
 .searchedCities{
-    width: 100%;
-    align-content: center;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     
 }
@@ -69,6 +71,10 @@
     width: 95%;
     height: 2px;
     margin:0;
+}
+
+.hrLeftBottom{
+    visibility: hidden;
 }
 
 #showHide {
@@ -133,6 +139,14 @@
     align-self: center;
 }
 
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.hrLeftBottom{
+    visibility: visible;
+}
 
 }
