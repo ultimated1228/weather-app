@@ -19,7 +19,6 @@
 .level{
     display:flex;
     flex-direction: column;
-    max-width:220px;
     justify-content: flex-start;
     gap:10px;
     padding-top: 10px;
@@ -27,18 +26,43 @@
 }
 
 .input {
-    width: 200px;
+    width: 100%;
 
 }
 
+.control{
+    width: 95%;
+}
+
+.buttons{
+    width: 95%;
+}
+
+.searchedCityButtons{
+    font-size: 20px !important;
+    background-color: rgb(215, 210, 210);
+    
+}
+
+.searchedCities{
+    width:100%;
+    align-content: center;
+    justify-content: center;
+    
+}
+
 .button{
-    width: 200px;
+    width: 95%;
+    margin: 5px;
+}
+.is-info{
+    width: 100%;
     margin-bottom: 0px !important;
 }
 
 .hrLeft{
     background: black;
-    width: 200px;
+    width: 95%;
     height: 2px;
     margin:0;
 }
@@ -54,6 +78,7 @@
 
 .leftNavHeader{
     font-size:24px;
+    text-align: left !important;
 /* how do I align this left? */
 }
 

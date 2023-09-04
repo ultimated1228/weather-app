@@ -7,7 +7,8 @@
     <title>Compare Weather</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 <body>
     <header>
         <!-- "Weather Dashboard Title Here with a gradient blue to light blue background" -->
@@ -29,12 +30,12 @@
             <hr class="hrLeft">
             <!-- the cities that have been searched will dynamically generate here 
         <button class="button is-normal is-responsive"> </button>-->
-            <ul class="searchedCities button is-normal is-responsive"> St George
+            <ul class="searchedCities">
 
             </ul>
             <hr class="hrLeft">
         </section>
-        <main class="column">
+        <main class="column is-four-fifths">
             <!-- main body where the currently selected cities weather for the current date with display. Below that cards with the weathers 5 day forecast t-->
 
 
@@ -87,7 +88,6 @@
 
         </main>
     </div>
-
 
     <script src="./assets/js/script.js"></script>
 </body>
