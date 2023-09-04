@@ -36,28 +36,63 @@ $(document).ready(function () {
         }
     });
 
+    function handle404Error(cityName) {
+        $("#errorCityName").text(cityName);
+        $("#errorModal").css("display", "block");
+
+        // Close the error modal when the "x" button is clicked
+        $(".close").on("click", function () {
+            $("#errorModal").css("display", "none");
+        });
+
+        // Close the error modal when the user clicks outside of it
+        $(window).on("click", function (event) {
+            if (event.target == document.getElementById("errorModal")) {
+                $("#errorModal").css("display", "none");
+            }
+        });
+    }
+
     function performSearch(cityName) {
         // let cityName = $(".input").val();
-        $("#showHide").css("visibility", "visible");
+
 
         if (cityName.trim() === "") {
-            alert("Please enter a valid city name.")
+            // Show the modal when the input is empty
+            $("#myModal").css("display", "block");
+
+            // Close the modal when the "x" button is clicked
+            $(".close").on("click", function () {
+                $("#myModal").css("display", "none");
+            });
+
+            // Close the modal when the user clicks outside of it
+            $(window).on("click", function (event) {
+                if (event.target == document.getElementById("myModal")) {
+                    $("#myModal").css("display", "none");
+                }
+            });
             return;
         }
 
         // Define the API URL and city name
         const apiKey = 'ff4b270447cfc07eabd21f6a279aaaa6';
-        const weatherAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=imperial&appid=${apiKey}`;
+        const weatherAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName},{state code}&units=imperial&appid=${apiKey}`;
 
         // Function to fetch weather data
         function getWeatherData() {
             fetch(weatherAPI)
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Network response was not ok');
+                        if (response.status === 404) {
+                            // Handle the 404 error and display the error modal
+                            handle404Error(cityName);
+                            return;
+                        }
                     }
                     return response.json();
                 })
+
                 .then(data => {
                     // log weather data
                     console.log(data);
@@ -97,12 +132,12 @@ $(document).ready(function () {
                         let dayData = data.list[i];
                         console.log(dayData)
                         let date = dayjs(dayData.dt_txt).format("MM/DD/YYYY");
-                        
+
                         let srcPathFiveDay = 'https://openweathermap.org/img/w/' + dayData.weather[0].icon + ".png";
                         let spanElFiveDay = $("<span>")
                         let pElFiveDay = $("<p>")
                         let iconElFiveDay = $("<img>", { src: srcPathFiveDay, width: 50, height: 50 });
-                        
+
                         spanElFiveDay.append(iconElFiveDay)
                         pElFiveDay.append(spanElFiveDay)
 
@@ -117,11 +152,11 @@ $(document).ready(function () {
                         $fiveDayCard.find(".fiveDayCardTemp").text("Temp: " + temp);
                         $fiveDayCard.find(".fiveDayCardWind").text("Wind: " + wind);
                         $fiveDayCard.find(".fiveDayCardHumidity").text("Humidity: " + humidity);
-                        
+
                         cardIndex++;
                     }
 
-
+                    $("#showHide").css("visibility", "visible");
 
                     // // Save the searched city to local storage
                     // searchedCities.push(cityName);
@@ -131,16 +166,11 @@ $(document).ready(function () {
                         // Save the searched city to local storage
                         searchedCities.push(cityName);
                         localStorage.setItem("searchedCities", JSON.stringify(searchedCities));
-                      }
+                    }
 
                     // Display the updated list of searched cities
                     displaySearchedCities();
                 })
-                .catch(error => {
-                    // Handle errors
-                    console.error('There was a problem fetching weather data:', error);
-
-                });
         }
 
         getWeatherData();
